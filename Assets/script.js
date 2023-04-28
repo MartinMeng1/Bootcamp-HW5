@@ -3,23 +3,23 @@ var eventdata;
 document.querySelector("#currentDay").textContent = dayjs().format('dddd, MMMM D YYYY');
 //$("#currentDay").text(dayjs().format('dddd, MMMM D YYYY');
 
-
+console.log(dayjs().hour())
 //Set the color of the hour bar according to the current hour.
 function setHourColor()
 {
     var now = dayjs();
-    for(i = 9; i<18;i++)
+    for(i = 9; i<19;i++)
     {
         if(i < now.hour()){
             $("#hour-" +i + " textarea").addClass("past");
         }
-        else if(i == now.hour())
+        if(i == now.hour())
         {
             $("#hour-" +i + " textarea").addClass("present");
         }
-        else(i > now.hour())
+        if(i > now.hour())
         {
-            $("#hour-" +i + " textarea").addClass("future")
+            $("#hour-" +i + " textarea").addClass("future");
         }
     }
 }
